@@ -1,0 +1,959 @@
+/* Import Roboto Mono font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Core Colors - ONLY these two colors should be used */
+  --navy-blue: #1E2A47;
+  --beige: #E6DACA;
+  
+  /* Layout Measurements */
+  --header-height: 70px;
+  --sidebar-width: 30%;
+  --main-content-width: 70%;
+  --border-radius: 0; /* Clean UI with no rounded corners */
+}
+
+/* Theme Variable Sets */
+.light-theme {
+  --background-color: var(--beige);
+  --text-color: var(--navy-blue);
+  --text-secondary: var(--navy-blue);
+  --text-muted: var(--navy-blue);
+  --border-color: var(--navy-blue);
+  --card-background: var(--beige);
+  --section-background: var(--beige);
+  --accent-color: var(--navy-blue);
+}
+
+.dark-theme {
+  --background-color: var(--navy-blue);
+  --text-color: var(--beige);
+  --text-secondary: var(--beige);
+  --text-muted: var(--beige);
+  --border-color: var(--beige);
+  --card-background: var(--navy-blue);
+  --section-background: var(--navy-blue);
+  --accent-color: var(--beige);
+}
+
+/* Force text to be navy blue in dark mode without background */
+.navy-text {
+  color: var(--navy-blue) !important;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent !important;
+}
+
+.dark-theme .navy-text {
+  opacity: 0.9 !important;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+}
+
+body {
+  font-family: 'Roboto Mono', monospace;
+  color: var(--text-color);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: 400;
+}
+
+#root {
+  background-color: var(--background-color);
+  min-height: 100vh;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: 'Roboto Mono', monospace;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+/* Clean, Minimal Layout Styles */
+.portfolio {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.sidebar {
+  width: var(--sidebar-width);
+  padding: 2rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  border-right: 1px solid var(--border-color);
+  background-color: var(--background-color);
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 3rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.points {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.main-content {
+  width: var(--main-content-width);
+  min-height: 100vh;
+  padding: 0 3rem;
+  background-color: var(--background-color);
+}
+
+.content-divider {
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 3rem 0;
+  opacity: 0.3;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--header-height);
+  margin-bottom: 1rem;
+  background-color: var(--background-color);
+}
+
+.theme-toggles {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.theme-toggle-container {
+  position: relative;
+}
+
+.theme-toggle.floating {
+  position: fixed;
+  right: 2rem; 
+  top: 2rem;
+  z-index: 1000;
+  padding: 0.5rem;
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: 1.25rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.theme-toggle.floating:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.user-actions {
+  display: flex;
+  align-items: center;
+}
+
+.github-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  border: 1px solid var(--text-color);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.github-btn:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+/* Make sure GitHub button is visible in dark mode */
+.dark-theme .github-btn,
+.dark-theme .github-btn svg {
+  color: var(--beige) !important;
+  border-color: var(--beige) !important;
+}
+
+.dark-theme .github-btn:hover {
+  background-color: var(--beige) !important;
+  color: var(--navy-blue) !important;
+}
+
+.dark-theme .github-btn:hover svg {
+  color: var(--navy-blue) !important;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+  background-color: var(--background-color);
+}
+
+.profile-pictures {
+  display: flex;
+  gap: 1rem;
+}
+
+.profile-picture {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+
+.profile-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-info h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.4;
+}
+
+.profile-description {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.profile-location {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px);
+}
+
+/* Current Position */
+.current-position {
+  padding: 2rem 0;
+  background-color: var(--background-color);
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-header h2 {
+  font-size: 0.875rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+/* Typewriter effect styling */
+.position-title.typewriter {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  height: 2.5rem; /* Fixed height to prevent layout shift */
+}
+
+.position-title .cursor {
+  display: inline-block;
+  margin-left: 4px;
+  width: 2px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.position-timeline {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.position-description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.tech-stack {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.tech-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.position-toggle {
+  margin-top: 2rem;
+}
+
+.toggle-previous-positions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  transition: color 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.toggle-arrow {
+  display: inline-block;
+  transform: rotate(90deg);
+  font-size: 0.75rem;
+}
+
+/* Experience Section */
+.experience-section {
+  padding: 2rem 0;
+  background-color: var(--background-color);
+}
+
+.tab-selector {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1.5rem;
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.tab-button.active {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  opacity: 1;
+}
+
+.experience-content {
+  margin-top: 3rem;
+}
+
+.experience-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  opacity: 0.9;
+  background-color: var(--background-color);
+}
+
+.experience-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.experience-timeline {
+  min-width: 100px;
+}
+
+.year {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background-color: var(--accent-color);
+  margin-top: 0.75rem;
+}
+
+.experience-details {
+  flex: 1;
+}
+
+.position, .degree {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.company, .institution {
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.description {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.tech-used, .achievements {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tech-tag, .achievement-tag {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+/* Projects Section */
+.projects-section {
+  padding: 2rem 0;
+  background-color: var(--background-color);
+}
+
+.filter-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.search-bar {
+  flex: 1;
+  max-width: 300px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  font-size: 0.875rem;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.5rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filter-button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: var(--background-color);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--background-color);
+}
+
+.project-type {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  padding: 0.25rem 0.5rem;
+}
+
+.project-name {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 300;
+}
+
+.project-link-icon {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.project-image {
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--background-color);
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 1.5rem;
+  background-color: var(--background-color);
+}
+
+.project-title {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.project-description {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tech-year {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  opacity: 0.7;
+}
+
+.project-links {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.project-link {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+.scroll-indicator {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 3rem;
+}
+
+.scroll-arrow {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+}
+
+/* Skills Section */
+.skills-section {
+  padding: 2rem 0;
+  background-color: var(--background-color);
+}
+
+.skills-container {
+  margin-top: 3rem;
+}
+
+.skill-group {
+  margin-bottom: 3rem;
+}
+
+.skill-group-title {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.skill-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+}
+
+.skill-icon {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.skill-name {
+  font-size: 0.875rem;
+  letter-spacing: 0.5px;
+  font-weight: 300;
+}
+
+/* Placeholder Experience */
+.placeholder-experience {
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 35%;
+    --main-content-width: 65%;
+  }
+  
+  .main-content {
+    padding: 0 2rem;
+  }
+  
+  .profile-pictures {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    flex-direction: column;
+  }
+  
+  .sidebar, .main-content {
+    width: 100%;
+  }
+  
+  .sidebar {
+    height: auto;
+    min-height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2rem;
+  }
+  
+  .main-content {
+    padding: 0 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .experience-item {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .experience-timeline {
+    min-width: auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .profile-pictures {
+    justify-content: center;
+  }
+}
+
+/* Dark theme styles */
+.dark-theme .skill-icon,
+.dark-theme .skill-name,
+.dark-theme .tech-tag,
+.dark-theme .achievement-tag,
+.dark-theme .project-description,
+.dark-theme .tech-year,
+.dark-theme .project-link,
+.dark-theme .description {
+  color: var(--navy-blue) !important;
+}
+
+/* Floating Navbar */
+.floating-nav {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: flex;
+  gap: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.nav-item {
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--text-color);
+}
+
+.nav-item:hover {
+  opacity: 0.7;
+}
+
+/* Dark theme styles for specific content */
+.dark-theme .project-description,
+.dark-theme .description,
+.dark-theme .profile-description,
+.dark-theme .position-description,
+.dark-theme .freelance-notice {
+  color: var(--beige) !important;
+  opacity: 0.9 !important;
+}
+
+.dark-theme .tech-year,
+.dark-theme .project-link,
+.dark-theme .project-title,
+.dark-theme .project-name,
+.dark-theme .section-header h2,
+.dark-theme .skill-group-title {
+  color: var(--beige) !important;
+}
+
+/* Project cards in dark mode */
+.dark-theme .project-card {
+  border-color: var(--beige);
+}
+
+/* Fix visibility in dark mode for links in project cards */
+.dark-theme .project-link,
+.dark-theme .project-link svg {
+  color: var(--beige) !important;
+}
+
+.dark-theme .project-link.navy-text,
+.dark-theme .project-link.navy-text svg {
+  background-color: transparent !important;
+  color: var(--beige) !important;
+}
+
+/* Make sure GitHub, Demo, Video links are visible */
+.dark-theme .medium-btn,
+.dark-theme .medium-btn svg {
+  color: var(--beige) !important;
+}
+
+/* Fix the tech tags for dark mode */
+.dark-theme .tech-tag.navy-text,
+.dark-theme .achievement-tag.navy-text {
+  background-color: transparent !important;
+  color: var(--beige) !important;
+  border-color: var(--beige);
+}
+
+/* Fix project card styling in dark mode */
+.dark-theme .project-type,
+.dark-theme .project-year {
+  color: var(--beige) !important;
+}
+
+/* Make dates visible in experience section */
+.dark-theme .year {
+  color: var(--beige) !important;
+}
+
+/* Make sure company and institution names are visible */
+.dark-theme .company,
+.dark-theme .institution {
+  color: var(--beige) !important;
+}
+
+/* Additional fixes for dark mode to ensure ALL text is visible */
+.dark-theme .project-description,
+.dark-theme .description,
+.dark-theme .profile-description,
+.dark-theme .position-description,
+.dark-theme .freelance-notice,
+.dark-theme .tech-tag,
+.dark-theme .achievement-tag,
+.dark-theme .tech-year,
+.dark-theme .project-links a,
+.dark-theme .company,
+.dark-theme .institution,
+.dark-theme .year,
+.dark-theme .position,
+.dark-theme .project-name,
+.dark-theme .degree {
+  color: var(--beige) !important;
+}
+
+/* Ensure that the icons in the floating nav bar are visible */
+.dark-theme .floating-nav .nav-item {
+  color: var(--beige) !important;
+}
+
+/* Override any background/text styling that's causing visibility issues */
+.dark-theme .nav-item svg,
+.dark-theme .social-links a svg {
+  color: var(--beige) !important;
+}
+
+/* Make the skill section's navy text more visible without beige background */
+.dark-theme .skill-icon,
+.dark-theme .skill-name {
+  background-color: transparent !important;
+  color: var(--navy-blue) !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Make sure the floating theme toggle is visible in dark mode */
+.dark-theme .theme-toggle.floating {
+  background-color: var(--navy-blue);
+  color: var(--beige);
+  border-color: var(--beige);
+}
