@@ -7,7 +7,7 @@ const PortfolioSection = () => {
       <div className="project-grid">
         <div className="project">
           <div className="project-image">
-            <img src="https://via.placeholder.com/350x500" alt="AlexNet Implementation" />
+            <img src="" alt="AlexNet Implementation" />
           </div>
           <div className="project-category">PYTORCH</div>
           <h3 className="project-title">AlexNet - Scratch Implementation<br />December 2024</h3>

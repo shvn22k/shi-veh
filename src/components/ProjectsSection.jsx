@@ -8,9 +8,9 @@ const ProjectsSection = () => {
       title: "AlexNet - Scratch Implementation",
       description: "Implemented the Deep Learning Research Paper - ImageNet Classification using Deep Convolutional Neural Networks (2012) from scratch in PyTorch",
       tags: ["Python", "PyTorch", "CNN", "Research"],
-      github: "https://github.com",
+      github: "https://github.com/shvn22k/AlexNet-Implementation",
       date: "December 2024",
-      image: "/project-placeholder.jpg",
+      image: "/alexnet.webp",
       type: "AI/ML"
     },
     {
@@ -18,11 +18,11 @@ const ProjectsSection = () => {
       title: "Xamify",
       description: "AI-agents to analyze syllabus and PYQs of any subject and give out unit-wise list of topics with the number of times they occurred in PYQs to highlight important sections",
       tags: ["Phidata", "Groq", "Streamlit", "Next.js"],
-      github: "https://github.com",
-      demo: "https://streamlit.com",
-      video: "https://youtube.com",
+      github: "https://github.com/shvn22k/xamify-streamlit",
+      demo: "https://xamify-shvn.streamlit.app/",
+      video: "https://www.youtube.com/watch?v=Dq7N2BjoSyw",
       date: "February 2025",
-      image: "/project-placeholder.jpg",
+      image: "/xamify.png",
       type: "AI/ML"
     },
     {
@@ -30,9 +30,9 @@ const ProjectsSection = () => {
       title: "Seq2Seq Learning with NNs",
       description: "Implemented the Sequence to Sequence Learning with Neural Networks (2014) research paper from scratch using PyTorch, introducing the Encoder-Decoder architecture for NMT",
       tags: ["Python", "PyTorch", "NLP", "Research"],
-      github: "https://github.com",
+      github: "https://github.com/shvn22k/seq2seq",
       date: "April 2025",
-      image: "/project-placeholder.jpg",
+      image: "/seq2seq.png",
       type: "AI/ML"
     },
     {
@@ -40,10 +40,10 @@ const ProjectsSection = () => {
       title: "Supernova Hacks",
       description: "Vibe coded a sleek, dynamic frontend for my college's hackathon event in pure React. Created a visually stunning, responsive interface to showcase event details, timeline, prizes, and sponsors with smooth animations.",
       tags: ["React", "CSS", "JavaScript", "Vibe Coding"],
-      github: "https://github.com",
-      demo: "https://supernovahacks.demo",
-      date: "March 2025",
-      image: "/project-placeholder.jpg",
+      github: "https://github.com/shvn22k/supernova",
+      demo: "https://supernovahacks.vercel.app",
+      date: "April 2025",
+      image: "/supernova.png",
       type: "Web Dev"
     }
   ];
