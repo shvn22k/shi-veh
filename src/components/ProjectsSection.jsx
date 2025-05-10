@@ -41,7 +41,7 @@ const ProjectsSection = () => {
       description: "Vibe coded a sleek, dynamic frontend for my college's hackathon event in pure React. Created a visually stunning, responsive interface to showcase event details, timeline, prizes, and sponsors with smooth animations.",
       tags: ["React", "CSS", "JavaScript", "Vibe Coding"],
       github: "https://github.com/shvn22k/supernova",
-      demo: "https://supernova-hacks.vercel.app",
+      demo: "https://supernova-mu.vercel.app",
       date: "April 2025",
       image: "/supernova.png",
       type: "Web Dev"
