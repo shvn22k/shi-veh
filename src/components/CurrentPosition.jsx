@@ -62,10 +62,9 @@ const CurrentPosition = () => {
         </div>
         
         <div className="tech-stack">
-          <span className="tech-icon">Py</span>
-          <span className="tech-icon">ML</span>
-          <span className="tech-icon">DL</span>
-          <span className="tech-icon">AI</span>
+          <a href="https://shiven-is-shiven.vercel.app/" target="_blank" rel="noopener noreferrer" className="resume-chat-btn">
+            Chat with my resume
+          </a>
         </div>
       </div>
     </div>
