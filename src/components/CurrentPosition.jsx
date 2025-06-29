@@ -60,12 +60,6 @@ const CurrentPosition = () => {
             Open for freelance work — I can vibe code your sites and get things done anyhow. 
           </p>
         </div>
-        
-        <div className="tech-stack">
-          <a href="https://shiven-is-shiven.vercel.app/" target="_blank" rel="noopener noreferrer" className="resume-chat-btn">
-            Chat with my resume
-          </a>
-        </div>
       </div>
     </div>
   )
