@@ -37,7 +37,7 @@ const AboutSection = () => {
             <div>
               <h3>Social Network:</h3>
               <div className="social-links">
-                <a href="https://linkedin.com">Ln.</a>
+                {/* <a href="https://linkedin.com">Ln.</a> */}
                 <a href="https://github.com">Gh.</a>
                 <a href="https://medium.com">Me.</a>
                 <a href="https://twitter.com">X.</a>

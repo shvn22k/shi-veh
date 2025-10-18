@@ -25,7 +25,7 @@ const ContactSection = () => {
           <div className="contact-item">
             <h3>Social Profiles</h3>
             <div className="social-links">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              {/* <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> */}
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://medium.com" target="_blank" rel="noopener noreferrer">Medium</a>
               <a href="https://kaggle.com" target="_blank" rel="noopener noreferrer">Kaggle</a>
