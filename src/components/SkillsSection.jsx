@@ -53,6 +53,10 @@ const SkillsSection = () => {
               <div className="skill-icon navy-text">HF</div>
               <span className="skill-name navy-text">Huggingface</span>
             </div>
+            <div className="skill-item">
+              <div className="skill-icon navy-text">LC</div>
+              <span className="skill-name navy-text">LangChain</span>
+            </div>
           </div>
         </div>
       </div>
