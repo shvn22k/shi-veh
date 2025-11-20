@@ -50,7 +50,7 @@ const ProjectsSection = () => {
       id: 5,
       title: "BlueSignal - AI Flood Crowdsourcing Platform",
       description: "Built real-time flood crowdsourcing platform using Server-Sent Events (SSE) for live updates between citizens and authorities during emergencies. Integrated Hugging Face models including CLIP-ViT transformers for image verification and DistilBERT for text classification.",
-      tags: ["Python", "Flask", "React", "SQLite", "Hugging Face"],
+      tags: ["Flask", "React", "SQLite", "Hugging Face"],
       github: "https://github.com/shvn22k/bluesignal",
       video: "https://www.youtube.com/watch?v=8HGXNpC3kTY",
       date: "October 2025",
