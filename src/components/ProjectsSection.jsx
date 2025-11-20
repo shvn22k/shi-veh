@@ -73,6 +73,7 @@ const ProjectsSection = () => {
       description: "Vibe coded an accountability webapp for friends to stay on track together. Features include creating rooms with up to 4 friends, daily to-do lists with automatic rollover, personal to-do lists per person, daily check-ins and streak tracking, real-time leaderboard and progress, and mobile-friendly design. Built with Clerk authentication and Supabase backend.",
       tags: ["React", "Clerk", "Supabase", "Vibe Coding"],
       github: "https://github.com/shvn22k/get-yo-aah-to-work",
+      demo: "https://get-yo-aah-to-work.vercel.app",
       date: "November 2025",
       image: "/get-yo-aah-to-work.png",
       type: "Web Dev"
