@@ -45,6 +45,37 @@ const ProjectsSection = () => {
       date: "April 2025",
       image: "/supernova.png",
       type: "Web Dev"
+    },
+    {
+      id: 5,
+      title: "BlueSignal - AI Flood Crowdsourcing Platform",
+      description: "Built real-time flood crowdsourcing platform using Server-Sent Events (SSE) for live updates between citizens and authorities during emergencies. Integrated Hugging Face models including CLIP-ViT transformers for image verification and DistilBERT for text classification.",
+      tags: ["Python", "Flask", "React", "SQLite", "Hugging Face"],
+      github: "https://github.com/shvn22k/bluesignal",
+      video: "https://www.youtube.com/watch?v=8HGXNpC3kTY",
+      date: "October 2025",
+      image: "/bluesignal.png",
+      type: "AI/ML"
+    },
+    {
+      id: 6,
+      title: "Hybrid RAG-based Recommendation System",
+      description: "Built hybrid RAG system combining Pinecone vector embeddings and Neo4j graph database with TF-IDF scoring for enhanced semantic and structural retrieval. Implemented adaptive fusion weighting and query expansion techniques, achieving 4.2x improvement in recall metrics compared to baseline retrieval methods.",
+      tags: ["Python", "Pinecone", "Neo4j", "FastAPI"],
+      github: "https://github.com/shvn22k/shl-assessment",
+      date: "November 2025",
+      image: "/rag-system.png",
+      type: "AI/ML"
+    },
+    {
+      id: 7,
+      title: "get-yo-aah-to-work",
+      description: "Vibe coded an accountability webapp for friends to stay on track together. Features include creating rooms with up to 4 friends, daily to-do lists with automatic rollover, personal to-do lists per person, daily check-ins and streak tracking, real-time leaderboard and progress, and mobile-friendly design. Built with Clerk authentication and Supabase backend.",
+      tags: ["React", "Clerk", "Supabase", "Vibe Coding"],
+      github: "https://github.com/shvn22k/get-yo-aah-to-work",
+      date: "November2025",
+      image: "/get-yo-aah-to-work.png",
+      type: "Web Dev"
     }
   ];
 

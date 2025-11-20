@@ -54,7 +54,7 @@ const CurrentPosition = () => {
         
         <div className="position-description">
           <p>
-            I like building cool stuff with AI and usually build GenAI webapps and do some research paper implementations. I'm a quick learner too :] I write blogs too, check them out on medium.
+            I like building cool stuff with AI and usually build GenAI webapps and do some research paper implementations. I'm a quick learner and I write blogs too, check them out on medium.
           </p>
           <p className="freelance-notice">
             Open for freelance work — I can vibe code your sites and get things done anyhow. 

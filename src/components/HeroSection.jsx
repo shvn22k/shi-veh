@@ -7,19 +7,19 @@ const HeroSection = () => {
     <div className="hero-section">
       <div className="profile-pictures">
         <div className="profile-picture">
-          <img src="/shivenbw.jpg" alt="Shiven" />
+          <img src="/shiven.png" alt="Shiven" />
         </div>
         <div className="profile-picture">
-          <img src="/shiven.jpg" alt="Shiven" />
+          <img src="/shivenbw.jpeg" alt="Shiven" />
         </div>
         <div className="profile-picture">
-          <img src="/shivenbw.jpg" alt="Shiven" />
+          <img src="/shiven.png" alt="Shiven" />
         </div>
       </div>
       <div className="profile-info">
         <h1>Hi, I am Shiven.</h1>
         <p className="profile-description">
-          A 3rd year UG computer science student  in AI/ML development with a focus on NLP and LLMs.
+          A 3rd year UG computer science student  in AI/ML development with a focus on NLP and LLMs. Currently getting into Computer Vision and MLOps.
         </p>
         <p className="profile-location">NOIDA (UP), INDIA</p>
         
@@ -33,9 +33,9 @@ const HeroSection = () => {
           <a href="https://x.com/k_shvn" target="_blank" rel="noopener noreferrer">
             <RiTwitterXFill />
           </a>
-          {/* <a href="https://linkedin.com/in/shiven-k-58b423212" target="_blank" rel="noopener noreferrer">
+          <a href="https://linkedin.com/in/shiven-k-58b423212" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
-          </a> */}
+          </a>
         </div>
       </div>
     </div>

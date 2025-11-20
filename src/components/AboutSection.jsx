@@ -18,7 +18,8 @@ const AboutSection = () => {
           <h2>CS & AI/ML Engineering Student<br />from India</h2>
           <p className="about-description">
             An enthusiastic AI/ML Engineering student with a focus on deep learning and natural language processing. 
-            Passionate about implementing research papers from scratch and developing AI-powered solutions.
+            Passionate about implementing research papers from scratch and developing AI-powered solutions. Currently 
+            getting into Computer Vision and MLOps.
           </p>
 
           <div className="contact-info">

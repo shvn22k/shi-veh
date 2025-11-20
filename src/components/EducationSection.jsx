@@ -11,7 +11,7 @@ const EducationSection = () => {
             <h3>Bachelor of Technology in CSAIML</h3>
             <h4>G.L Bajaj Institute of Technology and Management</h4>
             <p>Greater Noida, Uttar Pradesh</p>
-            <p>CGPA: 8.55</p>
+            <p>CGPA: 8.35</p>
           </div>
         </div>
         
