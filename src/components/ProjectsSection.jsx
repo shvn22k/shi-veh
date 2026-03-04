@@ -15,14 +15,12 @@ const ProjectsSection = () => {
     },
     {
       id: 2,
-      title: "Xamify",
-      description: "AI-agents to analyze syllabus and PYQs of any subject and give out unit-wise list of topics with the number of times they occurred in PYQs to highlight important sections",
-      tags: ["Phidata", "Groq", "Streamlit", "Next.js"],
-      github: "https://github.com/shvn22k/xamify-streamlit",
-      demo: "https://xamify-shvn.streamlit.app/",
-      video: "https://www.youtube.com/watch?v=Dq7N2BjoSyw",
-      date: "February 2025",
-      image: "/xamify.png",
+      title: "Hybrid RAG-based Recommendation System",
+      description: "Built hybrid RAG system combining Pinecone vector embeddings and Neo4j graph database with TF-IDF scoring for enhanced semantic and structural retrieval. Implemented adaptive fusion weighting and query expansion techniques, achieving 4.2x improvement in recall metrics compared to baseline retrieval methods.",
+      tags: ["Python", "Pinecone", "Neo4j", "FastAPI"],
+      github: "https://github.com/shvn22k/shl-assessment",
+      date: "November 2025",
+      image: "/rag-system.png",
       type: "AI/ML"
     },
     {
@@ -37,14 +35,14 @@ const ProjectsSection = () => {
     },
     {
       id: 4,
-      title: "Supernova Hacks",
-      description: "Vibe coded a sleek, dynamic frontend for my college's hackathon event in pure React. Created a visually stunning, responsive interface to showcase event details, timeline, prizes, and sponsors with smooth animations.",
-      tags: ["React", "CSS", "JavaScript", "Vibe Coding"],
-      github: "https://github.com/shvn22k/supernova",
-      demo: "https://supernova-mu.vercel.app",
-      date: "April 2025",
-      image: "/supernova.png",
-      type: "Web Dev"
+      title: "Object Detection and Tracking",
+      description: "Built an object detection and tracking system  using YOLO26 finetuned on custom dataset merged with Roboflow's dataset. Uses Ultralytics and OpenCV to detect and track jute/gunny sacks in truck-loading videos, then counts them as they cross a defined counting line/polygons. It combines general sack data with truck-specific annotated frames to make the model robust to real on-site conditions, using ByteTrack for consistent tracking and Ultralytics’ ObjectCounter for the final count.",
+      tags: ["Computer Vision", "Ultralytics", "Yolo"],
+      github: "https://github.com/shvn22k/object-tracking",
+      demo: "https://drive.google.com/drive/folders/1GjO4C9p6XIftdXhKj_EQxCd6oZCdv2Yu?usp=sharing",
+      date: "February 2026",
+      image: "/object-tracking.png",
+      type: "AI/ML"
     },
     {
       id: 5,
@@ -59,12 +57,14 @@ const ProjectsSection = () => {
     },
     {
       id: 6,
-      title: "Hybrid RAG-based Recommendation System",
-      description: "Built hybrid RAG system combining Pinecone vector embeddings and Neo4j graph database with TF-IDF scoring for enhanced semantic and structural retrieval. Implemented adaptive fusion weighting and query expansion techniques, achieving 4.2x improvement in recall metrics compared to baseline retrieval methods.",
-      tags: ["Python", "Pinecone", "Neo4j", "FastAPI"],
-      github: "https://github.com/shvn22k/shl-assessment",
-      date: "November 2025",
-      image: "/rag-system.png",
+      title: "Xamify",
+      description: "AI-agents to analyze syllabus and PYQs of any subject and give out unit-wise list of topics with the number of times they occurred in PYQs to highlight important sections",
+      tags: ["Phidata", "Groq", "Streamlit", "Next.js"],
+      github: "https://github.com/shvn22k/xamify-streamlit",
+      demo: "https://xamify-shvn.streamlit.app/",
+      video: "https://www.youtube.com/watch?v=Dq7N2BjoSyw",
+      date: "February 2025",
+      image: "/xamify.png",
       type: "AI/ML"
     },
     {
@@ -76,6 +76,17 @@ const ProjectsSection = () => {
       demo: "https://get-yo-aah-to-work.vercel.app",
       date: "November 2025",
       image: "/get-yo-aah-to-work.png",
+      type: "Web Dev"
+    },
+    {
+      id: 8,
+      title: "Supernova Hacks",
+      description: "Vibe coded a sleek, dynamic frontend for my college's hackathon event in pure React. Created a visually stunning, responsive interface to showcase event details, timeline, prizes, and sponsors with smooth animations.",
+      tags: ["React", "CSS", "JavaScript", "Vibe Coding"],
+      github: "https://github.com/shvn22k/supernova",
+      demo: "https://supernova-mu.vercel.app",
+      date: "April 2025",
+      image: "/supernova.png",
       type: "Web Dev"
     }
   ];

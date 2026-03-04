@@ -62,7 +62,7 @@ const ExperienceSection = () => {
                   I have an okay-ish GPA lol.
                 </p>
                 <div className="achievements">
-                  <span className="achievement-tag">CGPA: 8.35/10</span>
+                  <span className="achievement-tag">CGPA: 8.24/10</span>
                 </div>
               </div>
             </div>
