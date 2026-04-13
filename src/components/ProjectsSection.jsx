@@ -5,36 +5,29 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "AlexNet - Scratch Implementation",
-      description: "Implemented the Deep Learning Research Paper - ImageNet Classification using Deep Convolutional Neural Networks (2012) from scratch in PyTorch",
-      tags: ["Python", "PyTorch", "CNN", "Research"],
-      github: "https://github.com/shvn22k/AlexNet-Implementation",
-      date: "December 2024",
-      image: "/alexnet.webp",
+      title: "MindMirror: Cognitive Load Estimation",
+      description:
+        "Designed and deployed an end-to-end real-time cognitive load estimation system integrating behavioral signals through a full-stack architecture — FastAPI backend, Streamlit frontend, and live ML inference pipeline. Built baseline ensemble models (64% accuracy) with active improvements via feature engineering and model optimization; targeted at neurodivergent users and adaptive HCI research.",
+      tags: ["MediaPipe", "XGBoost", "Ensemble", "FastAPI", "Docker"],
+      github: "https://github.com/shvn22k/mindmirror",
+      live: "https://mindmirror22.vercel.app/",
+      date: "April 2026",
+      image: "/mindmirror.png",
       type: "AI/ML"
     },
     {
       id: 2,
-      title: "Hybrid RAG-based Recommendation System",
-      description: "Built hybrid RAG system combining Pinecone vector embeddings and Neo4j graph database with TF-IDF scoring for enhanced semantic and structural retrieval. Implemented adaptive fusion weighting and query expansion techniques, achieving 4.2x improvement in recall metrics compared to baseline retrieval methods.",
-      tags: ["Python", "Pinecone", "Neo4j", "FastAPI"],
+      title: "Product Recommendation System",
+      description: "built a multi-stage semantic retrieval pipeline on real e-commerce data that combines sentence embeddings, LLM-based query understanding, and reranking with hybrid scoring that fuses semantic similarity and engagement signals for context-aware ranking, and I engineered Redis caching across query expansion, embeddings, and final results that cut end-to-end latency from 3–5 seconds to under 100 milliseconds on repeated queries—about a 30–50× speedup.",
+      tags: ["Python", "Docker", "Redis", "FastAPI"],
       github: "https://github.com/shvn22k/shl-assessment",
+      live: "https://recommendation-engine-toastd-aofq.vercel.app/",
       date: "November 2025",
-      image: "/rag-system.png",
+      image: "/toastd.png",
       type: "AI/ML"
     },
     {
       id: 3,
-      title: "Seq2Seq Learning with NNs",
-      description: "Implemented the Sequence to Sequence Learning with Neural Networks (2014) research paper from scratch using PyTorch, introducing the Encoder-Decoder architecture for NMT",
-      tags: ["Python", "PyTorch", "NLP", "Research"],
-      github: "https://github.com/shvn22k/seq2seq",
-      date: "April 2025",
-      image: "/seq2seq.png",
-      type: "AI/ML"
-    },
-    {
-      id: 4,
       title: "Object Detection and Tracking",
       description: "Built an object detection and tracking system  using YOLO26 finetuned on custom dataset merged with Roboflow's dataset. Uses Ultralytics and OpenCV to detect and track jute/gunny sacks in truck-loading videos, then counts them as they cross a defined counting line/polygons. It combines general sack data with truck-specific annotated frames to make the model robust to real on-site conditions, using ByteTrack for consistent tracking and Ultralytics’ ObjectCounter for the final count.",
       tags: ["Computer Vision", "Ultralytics", "Yolo"],
@@ -45,8 +38,8 @@ const ProjectsSection = () => {
       type: "AI/ML"
     },
     {
-      id: 5,
-      title: "BlueSignal - AI Flood Crowdsourcing Platform",
+      id: 4,
+      title: "BlueSignal.AI: Flood Crowdsourcing",
       description: "Built real-time flood crowdsourcing platform using Server-Sent Events (SSE) for live updates between citizens and authorities during emergencies. Integrated Hugging Face models including CLIP-ViT transformers for image verification and DistilBERT for text classification.",
       tags: ["Flask", "React", "SQLite", "Hugging Face"],
       github: "https://github.com/shvn22k/bluesignal",
@@ -56,7 +49,27 @@ const ProjectsSection = () => {
       type: "AI/ML"
     },
     {
+      id: 5,
+      title: "AlexNet - Scratch Implementation",
+      description: "Implemented the Deep Learning Research Paper - ImageNet Classification using Deep Convolutional Neural Networks (2012) from scratch in PyTorch",
+      tags: ["Python", "PyTorch", "CNN", "Research"],
+      github: "https://github.com/shvn22k/AlexNet-Implementation",
+      date: "December 2024",
+      image: "/alexnet.webp",
+      type: "AI/ML"
+    },
+    {
       id: 6,
+      title: "Seq2Seq Learning with NNs",
+      description: "Implemented the Sequence to Sequence Learning with Neural Networks (2014) research paper from scratch using PyTorch, introducing the Encoder-Decoder architecture for NMT",
+      tags: ["Python", "PyTorch", "NLP", "Research"],
+      github: "https://github.com/shvn22k/seq2seq",
+      date: "April 2025",
+      image: "/seq2seq.png",
+      type: "AI/ML"
+    },
+    {
+      id: 7,
       title: "Xamify",
       description: "AI-agents to analyze syllabus and PYQs of any subject and give out unit-wise list of topics with the number of times they occurred in PYQs to highlight important sections",
       tags: ["Phidata", "Groq", "Streamlit", "Next.js"],
@@ -68,7 +81,7 @@ const ProjectsSection = () => {
       type: "AI/ML"
     },
     {
-      id: 7,
+      id: 8,
       title: "get-yo-aah-to-work",
       description: "Vibe coded an accountability webapp for friends to stay on track together. Features include creating rooms with up to 4 friends, daily to-do lists with automatic rollover, personal to-do lists per person, daily check-ins and streak tracking, real-time leaderboard and progress, and mobile-friendly design. Built with Clerk authentication and Supabase backend.",
       tags: ["React", "Clerk", "Supabase", "Vibe Coding"],
@@ -79,7 +92,7 @@ const ProjectsSection = () => {
       type: "Web Dev"
     },
     {
-      id: 8,
+      id: 9,
       title: "Supernova Hacks",
       description: "Vibe coded a sleek, dynamic frontend for my college's hackathon event in pure React. Created a visually stunning, responsive interface to showcase event details, timeline, prizes, and sponsors with smooth animations.",
       tags: ["React", "CSS", "JavaScript", "Vibe Coding"],
@@ -123,6 +136,11 @@ const ProjectsSection = () => {
                 {project.github && (
                   <a href={project.github} target="_blank" rel="noopener noreferrer" className="project-link">
                     <FaGithub /> GITHUB
+                  </a>
+                )}
+                {project.live && (
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" className="project-link">
+                    <FaExternalLinkAlt /> LIVE
                   </a>
                 )}
                 {project.demo && (

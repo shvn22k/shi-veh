@@ -194,6 +194,10 @@
   padding: 80px 5%;
 }
 
+.skills-section.skills-section--bento {
+  padding: 2rem 0;
+}
+
 .skills-content {
   display: flex;
   flex-wrap: wrap;

@@ -705,55 +705,225 @@ h1, h2, h3 {
   color: var(--text-secondary);
 }
 
-/* Skills Section */
+/* Skills Section — magic bento (spotlight + asymmetric grid, theme-aligned) */
 .skills-section {
   padding: 2rem 0;
   background-color: var(--background-color);
 }
 
-.skills-container {
-  margin-top: 3rem;
+.skills-section--bento {
+  position: relative;
 }
 
-.skill-group {
-  margin-bottom: 3rem;
-}
-
-.skill-group-title {
-  font-size: 1rem;
-  margin-bottom: 1.5rem;
-  color: var(--text-secondary);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-weight: 400;
-  opacity: 0.9;
-}
-
-.skill-items {
+.skills-bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: minmax(5.5rem, auto);
+  gap: 0.65rem;
+  margin-top: 2.25rem;
+  position: relative;
+  z-index: 2;
 }
 
-.skill-item {
+.skills-bento-card {
+  --mx: 50%;
+  --my: 40%;
+  --glow-i: 0;
+  --spot-rgb: 30, 42, 71;
+  position: relative;
   display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem;
-  background-color: var(--background-color);
+  flex-direction: column;
+  padding: 1.1rem 1.15rem 1.2rem;
   border: 1px solid var(--border-color);
+  background-color: var(--background-color);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--bento-delay, 0s),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1) var(--bento-delay, 0s),
+    border-color 0.25s ease,
+    box-shadow 0.35s ease;
 }
 
-.skill-icon {
-  font-size: 1rem;
+.dark-theme .skills-bento-card {
+  --spot-rgb: 230, 218, 202;
+}
+
+.skills-bento-card--visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.skills-bento-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 36px rgba(30, 42, 71, 0.08);
+}
+
+.dark-theme .skills-bento-card:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+}
+
+.skills-bento-card__glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--mx) var(--my),
+    rgba(var(--spot-rgb), calc(0.13 * var(--glow-i))) 0%,
+    rgba(var(--spot-rgb), calc(0.04 * var(--glow-i))) 38%,
+    transparent 62%
+  );
+  transition: background 0.12s ease;
+  z-index: 0;
+}
+
+.skills-bento-card__shine {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: calc(0.35 * var(--glow-i));
+  background: radial-gradient(
+    200px circle at var(--mx) var(--my),
+    rgba(var(--spot-rgb), 0.25) 0%,
+    transparent 65%
+  );
+  mix-blend-mode: soft-light;
+  transition: opacity 0.2s ease;
+}
+
+.skills-bento-card__body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  height: 100%;
+}
+
+.skills-bento-card__title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.11em;
+  line-height: 1.35;
   color: var(--text-color);
-  font-weight: bold;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
 }
 
-.skill-name {
-  font-size: 0.875rem;
-  letter-spacing: 0.5px;
+.skills-bento-card__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.65rem;
+  align-items: center;
+  align-content: flex-start;
+  flex: 1;
+}
+
+.skills-bento-card__items li {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: var(--text-color);
+  line-height: 1.4;
+}
+
+.skills-bento-card__items li:not(:last-child)::after {
+  content: '|';
+  margin-left: 0.55rem;
+  padding-left: 0.55rem;
   font-weight: 300;
+  letter-spacing: 0;
+  opacity: 0.42;
+  pointer-events: none;
+  color: var(--text-secondary);
+}
+
+/* Fixed spotlight while cursor moves over bento (Magic Bento–style, theme hues) */
+.skills-bento-spotlight {
+  position: fixed;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.light-theme .skills-bento-spotlight {
+  background: radial-gradient(
+    circle,
+    rgba(30, 42, 71, 0.09) 0%,
+    rgba(30, 42, 71, 0.03) 42%,
+    transparent 68%
+  );
+  mix-blend-mode: multiply;
+}
+
+.dark-theme .skills-bento-spotlight {
+  background: radial-gradient(
+    circle,
+    rgba(230, 218, 202, 0.07) 0%,
+    rgba(230, 218, 202, 0.02) 45%,
+    transparent 70%
+  );
+  mix-blend-mode: screen;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-bento-card {
+    opacity: 1;
+    transform: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .skills-bento-card--visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  .skills-bento-spotlight {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .skills-bento-card {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    min-height: 0;
+  }
+
+  .skills-bento-card__items li:not(:last-child)::after {
+    display: none;
+  }
+
+  .skills-bento-card__items {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .skills-bento-card__items li:not(:last-child) {
+    padding-bottom: 0.45rem;
+    margin-bottom: 0.45rem;
+    border-bottom: 1px solid var(--border-color);
+  }
 }
 
 /* Placeholder Experience */
@@ -821,8 +991,6 @@ h1, h2, h3 {
 }
 
 /* Dark theme styles */
-.dark-theme .skill-icon,
-.dark-theme .skill-name,
 .dark-theme .tech-tag,
 .dark-theme .achievement-tag,
 .dark-theme .project-description,
@@ -877,7 +1045,8 @@ h1, h2, h3 {
 .dark-theme .project-title,
 .dark-theme .project-name,
 .dark-theme .section-header h2,
-.dark-theme .skill-group-title {
+.dark-theme .skills-bento-card__title,
+.dark-theme .skills-bento-card__items li {
   color: var(--beige) !important;
 }
 
@@ -957,15 +1126,6 @@ h1, h2, h3 {
 .dark-theme .nav-item svg,
 .dark-theme .social-links a svg {
   color: var(--beige) !important;
-}
-
-/* Make the skill section's navy text more visible without beige background */
-.dark-theme .skill-icon,
-.dark-theme .skill-name {
-  background-color: transparent !important;
-  color: var(--navy-blue) !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
 }
 
 /* Make sure the floating theme toggle is visible in dark mode */
