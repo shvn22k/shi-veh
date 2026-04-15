@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaMedium, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaMedium, FaLinkedin, FaGithub, FaFilePdf } from 'react-icons/fa';
 import { RiTwitterXFill } from 'react-icons/ri';
 
 const HeroSection = () => {
@@ -35,6 +35,18 @@ const HeroSection = () => {
           </a>
           <a href="https://linkedin.com/in/shiven-k-58b423212" target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
+          </a>
+        </div>
+
+        <div className="hero-resume-row">
+          <a
+            href="https://drive.google.com/file/d/1FSwmlh7PMPDuzClFaKPE-_fqj83qEoo1/view?usp=sharing"
+            className="resume-chat-btn resume-hero-cta"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFilePdf className="resume-cta-icon" aria-hidden />
+            View resume
           </a>
         </div>
       </div>

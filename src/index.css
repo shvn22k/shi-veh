@@ -394,6 +394,24 @@ h1, h2, h3 {
   border-color: var(--text-color);
 }
 
+.hero-resume-row {
+  margin-top: 1.25rem;
+}
+
+.resume-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+
+.resume-cta-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
 .position-toggle {
   margin-top: 2rem;
 }
