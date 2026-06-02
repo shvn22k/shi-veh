@@ -20,7 +20,7 @@ const ProjectsSection = () => {
       title: "Product Recommendation System",
       description: "built a multi-stage semantic retrieval pipeline on real e-commerce data that combines sentence embeddings, LLM-based query understanding, and reranking with hybrid scoring that fuses semantic similarity and engagement signals for context-aware ranking, and I engineered Redis caching across query expansion, embeddings, and final results that cut end-to-end latency from 3–5 seconds to under 100 milliseconds on repeated queries—about a 30–50× speedup.",
       tags: ["Python", "Docker", "Redis", "FastAPI"],
-      github: "https://github.com/shvn22k/shl-assessment",
+      github: "https://github.com/shvn22k/recommendation-engine-toastd",
       live: "https://recommendation-engine-toastd-aofq.vercel.app/",
       date: "November 2025",
       image: "/toastd.png",
