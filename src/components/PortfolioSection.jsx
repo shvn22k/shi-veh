@@ -53,6 +53,7 @@ const PortfolioSection = () => {
           </p>
           <a href="https://github.com" className="project-link">GitHub</a>
         </div>
+
       </div>
     </section>
   )

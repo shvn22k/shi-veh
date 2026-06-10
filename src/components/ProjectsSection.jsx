@@ -50,6 +50,17 @@ const ProjectsSection = () => {
     },
     {
       id: 5,
+      title: "CHINTU — Geopolitical Knowledge Graph",
+      description: "Built a full-stack geopolitical intelligence system (Causal and Hierarchical Intelligence for Narrative Tracking) that ingests GDELT world events into a TigerGraph knowledge graph linking events, actors, and topics via causal influence edges. Designed a Flask API with LLM-based NLP intent extraction that routes natural-language questions to whitelisted GSQL queries — causal explosion, narrative trace, and event search — with no raw GSQL from the client.",
+      tags: ["TigerGraph", "Flask", "Python", "OpenAI"],
+      github: "https://github.com/shvn22k/chintu",
+      video: "https://youtu.be/qM3iMzK2wcE",
+      date: "April 2026",
+      image: "/chintu.png",
+      type: "AI/ML"
+    },
+    {
+      id: 6,
       title: "AlexNet - Scratch Implementation",
       description: "Implemented the Deep Learning Research Paper - ImageNet Classification using Deep Convolutional Neural Networks (2012) from scratch in PyTorch",
       tags: ["Python", "PyTorch", "CNN", "Research"],
@@ -59,7 +70,7 @@ const ProjectsSection = () => {
       type: "AI/ML"
     },
     {
-      id: 6,
+      id: 7,
       title: "Seq2Seq Learning with NNs",
       description: "Implemented the Sequence to Sequence Learning with Neural Networks (2014) research paper from scratch using PyTorch, introducing the Encoder-Decoder architecture for NMT",
       tags: ["Python", "PyTorch", "NLP", "Research"],
@@ -69,7 +80,7 @@ const ProjectsSection = () => {
       type: "AI/ML"
     },
     {
-      id: 7,
+      id: 8,
       title: "Xamify",
       description: "AI-agents to analyze syllabus and PYQs of any subject and give out unit-wise list of topics with the number of times they occurred in PYQs to highlight important sections",
       tags: ["Phidata", "Groq", "Streamlit", "Next.js"],
@@ -81,7 +92,7 @@ const ProjectsSection = () => {
       type: "AI/ML"
     },
     {
-      id: 8,
+      id: 9,
       title: "get-yo-aah-to-work",
       description: "Vibe coded an accountability webapp for friends to stay on track together. Features include creating rooms with up to 4 friends, daily to-do lists with automatic rollover, personal to-do lists per person, daily check-ins and streak tracking, real-time leaderboard and progress, and mobile-friendly design. Built with Clerk authentication and Supabase backend.",
       tags: ["React", "Clerk", "Supabase", "Vibe Coding"],
@@ -92,7 +103,7 @@ const ProjectsSection = () => {
       type: "Web Dev"
     },
     {
-      id: 9,
+      id: 10,
       title: "Supernova Hacks",
       description: "Vibe coded a sleek, dynamic frontend for my college's hackathon event in pure React. Created a visually stunning, responsive interface to showcase event details, timeline, prizes, and sponsors with smooth animations.",
       tags: ["React", "CSS", "JavaScript", "Vibe Coding"],
