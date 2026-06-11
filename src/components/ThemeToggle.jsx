@@ -3,14 +3,14 @@ import { FaSun, FaMoon } from 'react-icons/fa'
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
   return (
-    <button 
-      className="theme-toggle floating" 
+    <button
+      className="theme-toggle"
       onClick={toggleTheme}
-      style={{ position: 'fixed', zIndex: 1001 }}
+      aria-label={theme === 'light-theme' ? 'Switch to dark theme' : 'Switch to light theme'}
     >
       {theme === 'light-theme' ? <FaMoon /> : <FaSun />}
     </button>
   )
 }
 
-export default ThemeToggle 
+export default ThemeToggle

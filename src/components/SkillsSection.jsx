@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
+import SectionHead from './SectionHead'
 
 /** Asymmetric bento — 4-column grid (see CSS). Order matches DOM for mobile stack. */
 const bentoTiles = [
@@ -187,11 +188,9 @@ const SkillsSection = () => {
 
   return (
     <div ref={sectionRef} className="skills-section skills-section--bento">
-      <div className="section-header">
-        <h2>TECHNICAL SKILLS</h2>
-      </div>
+      <SectionHead no="03" title="Skills" meta="7 domains" />
 
-      <div ref={gridRef} className="skills-bento-grid">
+      <div ref={gridRef} className="skills-bento-grid" style={{ marginTop: '0' }}>
         {bentoTiles.map((tile, i) => (
           <BentoCard
             key={tile.id}
