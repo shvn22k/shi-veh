@@ -28,7 +28,7 @@ const ExperienceSection = () => {
           <div className="experience-list">
             <div className="experience-item">
               <div className="experience-timeline">
-                <span className="year">Oct 2025 — Present</span>
+                <span className="year">Oct 2025 — December 2025</span>
                 <div className="timeline-dot"></div>
               </div>
               <div className="experience-details">
